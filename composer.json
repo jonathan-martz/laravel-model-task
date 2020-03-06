@@ -1,0 +1,24 @@
+{
+  "name": "jonathan-martz/laravel-model-task",
+  "description": "Php Lumen Model Task",
+  "license": "MIT",
+  "require": {
+    "php": "^7.3|^7.4",
+    "ext-json": "*",
+    "illuminate/database": "^7.0",
+    "illuminate/support": "^7.0"
+  },
+  "autoload": {
+    "classmap": [
+      "model/"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Jonathan Martz",
+      "email": "composer@jmartz.de",
+      "homepage": "https://www.jmartz.de",
+      "role": "Developer"
+    }
+  ]
+}
