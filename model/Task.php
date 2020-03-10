@@ -16,7 +16,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'description', 'PID', 'PTID', 'hash', 'status'
+        'id', 'name', 'description', 'PID', 'PTID', 'hash', 'status', 'estimation', 'prio', 'user'
     ];
 
     /**
@@ -25,6 +25,11 @@ class Task extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function getUser()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function getTaskType()
     {
