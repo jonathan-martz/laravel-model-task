@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class User
@@ -17,7 +16,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'description', 'PID', 'PTID'
+        'id', 'name', 'description', 'PID', 'PTID', 'hash', 'status'
     ];
 
     /**
@@ -26,6 +25,16 @@ class Task extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function getTaskType()
+    {
+        return $this->belongsTo(TaskType::class);
+    }
+
+    public function getProject()
+    {
+        return $this->belongsTo(Project::class);
+    }
 
     /**
      * User constructor.
