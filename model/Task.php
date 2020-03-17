@@ -16,7 +16,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'description', 'PID', 'PTID', 'hash', 'status', 'estimation', 'prio', 'user'
+        'id', 'name', 'description', 'PID', 'PTID', 'hash', 'status', 'estimation', 'prio', 'user', ''
     ];
 
     /**
@@ -28,17 +28,17 @@ class Task extends Model
 
     public function getUser()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'UID');
     }
 
     public function getTaskType()
     {
-        return $this->belongsTo(TaskType::class);
+        return $this->belongsTo(TaskType::class, 'PTID');
     }
 
     public function getProject()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class, 'PID');
     }
 
     /**
