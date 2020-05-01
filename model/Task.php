@@ -26,21 +26,6 @@ class Task extends Model
      */
     protected $hidden = [];
 
-    public function getUser()
-    {
-        return $this->belongsTo(User::class, 'UID');
-    }
-
-    public function getTaskType()
-    {
-        return $this->belongsTo(TaskType::class, 'PTID');
-    }
-
-    public function getProject()
-    {
-        return $this->belongsTo(Project::class, 'PID');
-    }
-
     /**
      * User constructor.
      * @param array $attributes
